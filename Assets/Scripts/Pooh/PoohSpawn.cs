@@ -10,13 +10,14 @@ public class PoohSpawn : MonoBehaviour
     public GameObject spawnPrefab;
     Vector3 spawnPosition;
 
+
     float nextSpawnTime = 0f;
     public float spawnRate = 2f;// 이 값을 조절하여 똥 생성 간격을 조정.
 
     
     void Update()
     {
-        
+
         if (Time.time >= nextSpawnTime)
         {
             SpawnPooh();

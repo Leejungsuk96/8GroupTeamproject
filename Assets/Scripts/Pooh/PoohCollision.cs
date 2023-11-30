@@ -5,14 +5,22 @@ using UnityEngine;
 public class PoohCollision : MonoBehaviour
 {
     //여기에는 충돌처리를 구현해준다.
-    PoohSpawn _poohSpawn;
+    PoohController _poohController;
+
+    private void Awake()
+    {
+
+        _poohController = FindObjectOfType<PoohController>();
+
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Pooh"))
         {
             Destroy(collision.gameObject);
-            _poohSpawn.spawnRate ++;
+            _poohController.count++;
+            Debug.Log("닿았다!");
         }
         else if (collision.gameObject.CompareTag("Player"))
         {

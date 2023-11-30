@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2ab57da8f977bf14c9cc2d2415c985d2
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - TAEBAEK font
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f5a526e5a947b7d4ca9f50853d8b7a18, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

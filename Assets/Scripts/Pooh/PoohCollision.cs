@@ -12,7 +12,7 @@ public class PoohCollision : MonoBehaviour
 
         _poohController = FindObjectOfType<PoohController>();
         //게임매니저를 초기화하고
-        _gameManager = GetComponent<GameManager>();
+        _gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

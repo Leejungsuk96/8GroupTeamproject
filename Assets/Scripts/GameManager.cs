@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public Text ScoreText;
     public float GameTime;
     public Text TimeText;
-    
+    public GameObject EndPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -33,5 +33,10 @@ public class GameManager : MonoBehaviour
         ScoreText.text = "Á¡¼ö: " + (int)Score;
         //ÀÏ¹Ý ¶Ë + 1
         //½ºÇÇµå ¶Ë + 2
+    }
+
+    void GameOver()
+    {
+        EndPanel.SetActive(true);
     }
 }

@@ -10,11 +10,23 @@ public class PoohSpeed : MonoBehaviour
 
     void Update()
     {
-        Move();
+        if (CompareTag("Pooh"))
+        {
+            Move();
+        }
+        else if (CompareTag("BottomPooh"))
+        {
+            MoveRight();
+        }
     }
 
     void Move()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
+    }
+
+    void MoveRight()
+    {
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 }

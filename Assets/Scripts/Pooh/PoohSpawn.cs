@@ -7,8 +7,9 @@ public class PoohSpawn : MonoBehaviour
 
     // 게임이 시작되면 똥이 랜덤하게 나오게 만들어준다.
 
-    public GameObject spawnPrefab;
-    public GameObject spawnPrefab2;
+    public GameObject PrefabNormalPooh;
+    public GameObject PrefabSpeedPooh;
+    public GameObject PrefabBottomPooh;
     Vector3 spawnPosition;
 
 
@@ -34,21 +35,19 @@ public class PoohSpawn : MonoBehaviour
     void SpawnPooh()
     {
         spawnPosition = new Vector3(Random.Range(-8f, 8f), 6f, 5f);
-        GameObject newPooh = Instantiate(spawnPrefab, spawnPosition, Quaternion.identity);
+        GameObject newPooh = Instantiate(PrefabNormalPooh, spawnPosition, Quaternion.identity);
     }
 
     void SpawnSpeedPooh()
     {
         spawnPosition = new Vector3(Random.Range(-8f, 8f), 6f, 5f);
-        GameObject newPooh2 = Instantiate(spawnPrefab2, spawnPosition, Quaternion.identity);
+        GameObject newSpeedPooh = Instantiate(PrefabSpeedPooh, spawnPosition, Quaternion.identity);
+    }
 
-        // 새로운 Pooh 오브젝트에 대한 스크립트를 가져와서 속도를 설정
-        PoohSpeed poohSpeed = newPooh2.GetComponent<PoohSpeed>();
-        if (poohSpeed != null)
-        {
-            // 원하는 속도를 설정
-            poohSpeed.speed = 8f;
-        }
+    void SpawnBottomPooh()
+    {
+        spawnPosition = new Vector3(-10f, -4.5f, 5f);
+        GameObject newBottomPooh = Instantiate(PrefabBottomPooh, spawnPosition, Quaternion.identity);
     }
 
     //똥을 랜덤하게 생성하게 해주는 함수
@@ -63,7 +62,12 @@ public class PoohSpawn : MonoBehaviour
             // 첫 번째 새로운 똥 종류 생성
             SpawnSpeedPooh();
         }
-        // 두 번째 새로운 똥&버프 아이템 종류를 생성
+        else if(randomValue < 7f)
+        {
+            // 두 번째 아래 똥 생성
+            SpawnBottomPooh();
+        }
+        // 다른 새로운 똥&버프 아이템 종류를 생성
         
     }
 }

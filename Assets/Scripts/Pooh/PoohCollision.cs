@@ -11,6 +11,7 @@ public class PoohCollision : MonoBehaviour
     {
 
         _poohController = FindObjectOfType<PoohController>();
+        //게임매니저를 초기화하고
 
     }
 
@@ -20,14 +21,22 @@ public class PoohCollision : MonoBehaviour
         {
             Destroy(collision.gameObject);
             _poohController.count++;
+            //게임매니저의 점수값에 점수를 더해준다 ++;
             Debug.Log("닿았다!");
         }
-        else if (collision.gameObject.CompareTag("Player"))
+        else if (collision.gameObject.CompareTag("BottomPooh"))
+        {
+            Destroy(collision.gameObject);
+            Debug.Log("생성됐다!");
+        }
+        
+        /*//플레이어에 추가해야댈 것
+        else if (collision.gameObject.CompareTag("//똥들"))//예시
         {
             // 게임오버
             //게임 오버 UI창 불러오기
             //시간 멈추기
-        }
+        }*/
         // 나중에 다른 태그가 붙은 똥에 대한 충돌을 구현하고싶으면 위에랑 똑같이 tag만 수정해서 추가해주면 된다.
     }
 

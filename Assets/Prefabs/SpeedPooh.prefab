@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8090907606788929423}
   - component: {fileID: 2900053026625427458}
   - component: {fileID: 1075318002009762773}
-  m_Layer: 0
-  m_Name: Pooh2
+  m_Layer: 6
+  m_Name: SpeedPooh
   m_TagString: Pooh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d723e6e294de4249bbc635bff42bf67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 8

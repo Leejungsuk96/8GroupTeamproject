@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
+    //public BackMusic backMusic;
+    //public GameObject BackGroundMusic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,7 @@ public class Button : MonoBehaviour
 
     public void OnClickRetry()
     {
-        
+        //backMusic.MusicOn = false;
         SceneManager.LoadScene("MinkyuScene");
         Time.timeScale = 1;
     }

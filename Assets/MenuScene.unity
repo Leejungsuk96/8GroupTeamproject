@@ -755,6 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef688b279359634690174ccfda6a5b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backMusic: {fileID: 0}
 --- !u!1 &719295651
 GameObject:
   m_ObjectHideFlags: 0

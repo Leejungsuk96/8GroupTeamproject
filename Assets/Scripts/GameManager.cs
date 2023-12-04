@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
+
+    public static GameManager I;
+
+    public PoolManager pool;
+
     public int Score =0;
     public Text ScoreText;
     public Text EndScoreText;
@@ -14,7 +19,13 @@ public class GameManager : MonoBehaviour
     public Text BestScoreText;    
     public GameObject BestMsg;
 
-    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        I = this;
+    }
+
+
     void Start()
     {
         Time.timeScale = 1;

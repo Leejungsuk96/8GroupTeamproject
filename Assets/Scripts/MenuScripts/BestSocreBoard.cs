@@ -9,13 +9,13 @@ public class BestSocreBoard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        OnBoard();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        OnBoard();
     }
 
     public void OnBoard()

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public float GameTime;
     public Text TimeText;
     public GameObject EndPanel;
-    public bool GameOver = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         GameTime += Time.deltaTime;
         TimeUP();
         ScoreUP();
-        GameEnd();
+        
     }
 
     void TimeUP()
@@ -37,20 +37,6 @@ public class GameManager : MonoBehaviour
         EndScoreText.text = "Á¡¼ö: " + (int)Score;
         //ÀÏ¹Ý ¶Ë + 1
         //½ºÇÇµå ¶Ë + 2
-        if (GameOver == true)
-        {
-            
-        }
-    }
-
-     public void GameEnd()
-    {
-        if(GameTime > 10f)
-        {
-            Time.timeScale = 0;
-            GameOver = true;
-            EndPanel.SetActive(true);
-        }
        
-    }
+    }    
 }

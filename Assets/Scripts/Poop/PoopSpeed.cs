@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoohSpeed : MonoBehaviour
+public class PoopSpeed : MonoBehaviour
 {
 
     public float speed = 5f;
@@ -10,16 +10,16 @@ public class PoohSpeed : MonoBehaviour
 
     void Update()
     {
-        if (CompareTag("Pooh"))
+        if (CompareTag("Poop"))
         {
             Move();
         }
-        else if (CompareTag("BottomPooh"))
+        else if (CompareTag("BottomPoop"))
         {
             MoveRight();
         }
     }
-
+    //direction이라는 변수로 만들었으면 드럽지않았다. -송지원 튜터님-
     void Move()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);

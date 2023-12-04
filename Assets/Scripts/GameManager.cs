@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     public float GameTime;
     public Text TimeText;
     public GameObject EndPanel;
-    public Text EndTimeText;
+    public Text EndTimeText;    
+    public Text BestScoreText;
+    public GameObject BestMsg;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,26 @@ public class GameManager : MonoBehaviour
         ScoreText.text = "점수: " + (int)Score;
         EndScoreText.text = "점수: " + (int)Score;
         //일반 똥 + 1
-        //스피드 똥 + 2
-       
-    }    
+        //스피드 똥 + 2       
+    }
+
+    public void GameOver()
+    {
+        EndPanel.SetActive(true);
+        Time.timeScale = 0;
+
+        if (PlayerPrefs.HasKey("MyBestScore") == false)
+        {
+            PlayerPrefs.SetInt("MyBestScore", Score);
+        }
+        else
+        {
+            if (PlayerPrefs.GetInt("MyBestScore") < Score)
+            {
+                BestMsg.SetActive(true);
+                PlayerPrefs.SetInt("MyBestScore", Score);
+            }
+        }
+        BestScoreText.text = "최고 점수: " + PlayerPrefs.GetInt("MyBestScore");
+    }
 }

@@ -15,4 +15,14 @@ public class PlayerInputController : PoopCharacterController
     {
         CallJumpEvent(value.isPressed);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Pooh"))
+        {
+            Time.timeScale = 0f;
+            // retry 버튼 눌렀을때 타임 다시 1로 설정
+            Debug.Log("닿았다!");
+        }
+    }
 }

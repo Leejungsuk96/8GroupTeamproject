@@ -4,15 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
+
+    public static GameManager I;
+
+    public PoolManager pool;
+
     public int Score =0;
     public Text ScoreText;
     public Text EndScoreText;
     public float GameTime;
     public Text TimeText;
     public GameObject EndPanel;
-    public Text EndTimeText;
+    public Text EndTimeText;    
+    public Text BestScoreText;    
+    public GameObject BestMsg;
+    public int BestScore = 0;
 
-    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        I = this;
+    }
+
+
     void Start()
     {
         Time.timeScale = 1;
@@ -37,7 +51,29 @@ public class GameManager : MonoBehaviour
         ScoreText.text = "점수: " + (int)Score;
         EndScoreText.text = "점수: " + (int)Score;
         //일반 똥 + 1
-        //스피드 똥 + 2
-       
-    }    
+        //스피드 똥 + 2       
+    }
+
+    public void GameOver()
+    {
+        EndPanel.SetActive(true);
+        Time.timeScale = 0;
+
+        if (PlayerPrefs.HasKey("MyBestScore") == false)
+        {
+            PlayerPrefs.SetInt("MyBestScore", Score);
+            BestScore = Score;
+            BestMsg.SetActive(true);
+        }
+        else
+        {
+            if (PlayerPrefs.GetInt("MyBestScore") < Score)
+            {
+                BestMsg.SetActive(true);
+                PlayerPrefs.SetInt("MyBestScore", Score);
+                BestScore= Score;
+            }
+        }
+        BestScoreText.text = "최고 점수: " + PlayerPrefs.GetInt("MyBestScore");        
+    }
 }

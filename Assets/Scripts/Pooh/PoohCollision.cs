@@ -6,13 +6,11 @@ public class PoohCollision : MonoBehaviour
 {
     //여기에는 충돌처리를 구현해준다.
     PoohController _poohController;
-    GameManager _gameManager;
     private void Awake()
     {
 
         _poohController = FindObjectOfType<PoohController>();
         //게임매니저를 초기화하고
-        _gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -21,7 +19,7 @@ public class PoohCollision : MonoBehaviour
         {
             Destroy(collision.gameObject);
             _poohController.count++;
-            _gameManager.Score++;
+            GameManager.I.Score++;
             //게임매니저의 점수값에 점수를 더해준다 ++;
             Debug.Log("닿았다!");
         }

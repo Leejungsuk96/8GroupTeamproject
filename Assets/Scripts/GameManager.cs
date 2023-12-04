@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public float GameTime;
     public Text TimeText;
     public GameObject EndPanel;
-    
+    public Text EndTimeText;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     void TimeUP()
     {
         TimeText.text = "생존 시간: " + GameTime.ToString("N2");
+        EndTimeText.text = "생존 시간: " + GameTime.ToString("N2"); 
     }
     void ScoreUP()
     {

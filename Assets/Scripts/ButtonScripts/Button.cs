@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Button : MonoBehaviour
 {
     public GameObject BestScoreBoard;
-    BestSocreBoard _bestSocreBoard;
+    public BestSocreBoard _bestSocreBoard;
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +32,22 @@ public class Button : MonoBehaviour
 
     }
 
-    public void OnBoardBestScore()
+    public void OnClickBestScoreBoard()
     {
         BestScoreBoard.SetActive(true);
         _bestSocreBoard.OnBoard();
     }
 
+    public void CancelBoard()
+    {
+        BestScoreBoard.SetActive (false);
+    }
+
+    public void ResetBestScore()
+    {
+        PlayerPrefs.DeleteAll();
+        BestScoreBoard.SetActive(false);
+    }
     public void GameQuit()
     {
 #if UNITY_EDITOR

@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public Text EndTimeText;    
     public Text BestScoreText;    
     public GameObject BestMsg;
+    public int BestScore = 0;
 
 
     private void Awake()
@@ -61,6 +62,8 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("MyBestScore") == false)
         {
             PlayerPrefs.SetInt("MyBestScore", Score);
+            BestScore = Score;
+            BestMsg.SetActive(true);
         }
         else
         {
@@ -68,6 +71,7 @@ public class GameManager : MonoBehaviour
             {
                 BestMsg.SetActive(true);
                 PlayerPrefs.SetInt("MyBestScore", Score);
+                BestScore= Score;
             }
         }
         BestScoreText.text = "최고 점수: " + PlayerPrefs.GetInt("MyBestScore");        

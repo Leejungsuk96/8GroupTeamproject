@@ -5,21 +5,33 @@ using UnityEngine.UI;
 
 public class BestSocreBoard : MonoBehaviour
 {
-    public Text OnbBOardBestScore;
+    public Text OnBoardBestScore;
+
+    private void Awake()
+    {
+        OnBoard();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        OnBoard();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        OnBoard();
+        
     }
 
     public void OnBoard()
     {
-        OnbBOardBestScore.text = "최고 점수: " + PlayerPrefs.GetInt("MyBestScore");
+        if(PlayerPrefs.HasKey("MyBestScore") == false)
+        {
+            OnBoardBestScore.text = "최고 점수: " + (int)0;
+        }
+        else
+        {
+            OnBoardBestScore.text = "최고 점수: " + PlayerPrefs.GetInt("MyBestScore");
+        }
     }
 }

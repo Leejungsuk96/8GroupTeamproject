@@ -18,7 +18,7 @@ public class PlayerInputController : PoopCharacterController
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Pooh"))
+        if (collision.gameObject.CompareTag("Poop") || collision.gameObject.CompareTag("BottomPoop"))
         {
             GameManager.I.GameOver();
             //Time.timeScale = 0f;
@@ -26,5 +26,6 @@ public class PlayerInputController : PoopCharacterController
             // retry 버튼 눌렀을때 타임 다시 1로 설정
             Debug.Log("닿았다!");
         }
+        
     }
 }

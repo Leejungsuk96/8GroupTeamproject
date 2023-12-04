@@ -2,30 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoohCollision : MonoBehaviour
+public class PoopCollision : MonoBehaviour
 {
     //여기에는 충돌처리를 구현해준다.
-    PoohController _poohController;
+    PoopController _poopController;
     private void Awake()
     {
 
-        _poohController = FindObjectOfType<PoohController>();
+        _poopController = FindObjectOfType<PoopController>();
         //게임매니저를 초기화하고
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Pooh"))
+        if (collision.gameObject.CompareTag("Poop"))
         {
-            Destroy(collision.gameObject);
-            _poohController.count++;
+            collision.gameObject.SetActive(false);
+            _poopController.count++;
             GameManager.I.Score++;
             //게임매니저의 점수값에 점수를 더해준다 ++;
             Debug.Log("닿았다!");
         }
-        else if (collision.gameObject.CompareTag("BottomPooh"))
+        else if (collision.gameObject.CompareTag("BottomPoop"))
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
+            _poopController.count++;
+            GameManager.I.Score++;
             Debug.Log("생성됐다!");
         }
         

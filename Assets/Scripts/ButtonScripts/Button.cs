@@ -26,5 +26,15 @@ public class Button : MonoBehaviour
     public void OnClickMenu()
     {
         SceneManager.LoadScene("MenuScene");
+
+    }
+
+    public void GameQuit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }

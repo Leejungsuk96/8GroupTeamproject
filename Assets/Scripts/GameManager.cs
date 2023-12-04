@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public Text TimeText;
     public GameObject EndPanel;
     public Text EndTimeText;    
-    public Text BestScoreText;
+    public Text BestScoreText;    
     public GameObject BestMsg;
 
     // Start is called before the first frame update
@@ -59,6 +59,6 @@ public class GameManager : MonoBehaviour
                 PlayerPrefs.SetInt("MyBestScore", Score);
             }
         }
-        BestScoreText.text = "최고 점수: " + PlayerPrefs.GetInt("MyBestScore");
+        BestScoreText.text = "최고 점수: " + PlayerPrefs.GetInt("MyBestScore");        
     }
 }

@@ -7,8 +7,13 @@ public class Button : MonoBehaviour
 {
     public GameObject BestScoreBoard;
     public BestSocreBoard _bestSocreBoard;
-
+   
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
         
@@ -22,7 +27,7 @@ public class Button : MonoBehaviour
 
     public void OnClickRetry()
     {
-        
+        AudioManager.I.StopBgMusic();
         SceneManager.LoadScene("MinkyuScene");
         Time.timeScale = 1;
     }

@@ -42,7 +42,7 @@ public class PoolManager : MonoBehaviour
                 }
                 else
                 {
-                    //À§¿¡ ¶Ë
+                    //À§¿¡ ¶Ë, ¾Ë¾àµé
                     select.transform.position = new Vector3(Random.Range(-8f, 8f), 6f, 5f);
                 }
                 select.SetActive(true);

@@ -942,6 +942,7 @@ MonoBehaviour:
   - {fileID: 2473288278977429363, guid: 495094ad214e42b4bbd97e831dc0752c, type: 3}
   - {fileID: 1027330733739699112, guid: 5c5204416758228489348d79dbf45721, type: 3}
   - {fileID: 506538775101003537, guid: b5e3e0e6a1414ca41a99f6f7254eb377, type: 3}
+  - {fileID: 8041329342325536008, guid: 5e5f2de7686e84642b34b1cdff5ddd2f, type: 3}
 --- !u!4 &736203999
 Transform:
   m_ObjectHideFlags: 0
@@ -2430,9 +2431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075dba357924fed4f9e2d9e028d77ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabNormalPoop: {fileID: 0}
-  PrefabSpeedPoop: {fileID: 0}
-  PrefabBottomPoop: {fileID: 0}
   spawnRate: 1
 --- !u!4 &1448827855
 Transform:

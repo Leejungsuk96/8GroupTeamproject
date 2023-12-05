@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 87269907105072289}
   - component: {fileID: -4035139074467858871}
   m_Layer: 6
-  m_Name: Pooh
-  m_TagString: Pooh
+  m_Name: Poop
+  m_TagString: Poop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

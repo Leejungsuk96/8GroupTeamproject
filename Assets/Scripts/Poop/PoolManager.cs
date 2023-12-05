@@ -11,6 +11,8 @@ public class PoolManager : MonoBehaviour
 
     List<GameObject>[] pools;
 
+    
+
     private void Awake()
     {
         pools = new List<GameObject>[prefabs.Length];
@@ -23,15 +25,26 @@ public class PoolManager : MonoBehaviour
 
     }
 
+    /*select.transform.position = new Vector3(Random.Range(-8f, 8f), 6f, 5f);// select의 위치가 랜덤. select없으면 오브젝트 실시간으로 위치 변경됌*/
     public GameObject Get(int i)
     {
         GameObject select = null;
         // 선택한 풀의 비활성화 오브젝트에 접근
         foreach (GameObject item in pools[i]) 
         { 
-            if (!item.activeSelf) 
+            if (!item.activeSelf)
             {
                 select = item;
+                if (i == 2)
+                {
+                    // 바닥 똥
+                    select.transform.position = new Vector3(-10f, -4.45f, 5f);
+                }
+                else
+                {
+                    //위에 똥
+                    select.transform.position = new Vector3(Random.Range(-8f, 8f), 6f, 5f);
+                }
                 select.SetActive(true);
                 break;
             }

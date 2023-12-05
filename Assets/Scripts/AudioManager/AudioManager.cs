@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager I;
     public GameObject audioManager;
     public AudioSource BgMusic;
+    public AudioSource PlaySceneMusic;
     public bool IsPlayingBgMusic = false;
     // Start is called before the first frame update
 
@@ -35,5 +36,13 @@ public class AudioManager : MonoBehaviour
     public void StopBgMusic()
     {
         BgMusic.Stop();
+    }
+    public void StartPlaySceneMusic()
+    {
+        PlaySceneMusic.Play();
+    }
+    public void StopPlaySceneMusic()
+    {
+        PlaySceneMusic.Stop();
     }
 }

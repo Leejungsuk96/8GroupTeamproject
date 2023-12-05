@@ -1,10 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInputController : PoopCharacterController
 {
+    Pill pill;
+
+    private float invincibilityDuration = 5f;
+    private void Awake()
+    {
+        pill = FindObjectOfType<Pill>();//pill 초기화
+    }
+
     public void OnMove(InputValue value)
     {
         Vector2 moveInput = value.Get<Vector2>().normalized;
@@ -26,8 +35,15 @@ public class PlayerInputController : PoopCharacterController
             // retry 버튼 눌렀을때 타임 다시 1로 설정
             Debug.Log("닿았다!");
         }
+        else if (collision.gameObject.CompareTag("Pill"))
+        {
+            pill.bluePill(true);
+            Invoke("EndInvincibility", invincibilityDuration);
+        }
+    }
 
-        // 여기다가 알약 먹었을 때 알약 스크립트에서 실행될 함수 가져오기.
-        
+    private void EndInvincibility()
+    {
+        pill.bluePill(false);
     }
 }

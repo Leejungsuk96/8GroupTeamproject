@@ -19,6 +19,6 @@ public class GameMap : MonoBehaviour
 
         leftwall.transform.position = new Vector3(leftPos.x - 0.5f, -4.5f, 0);
         rightWall.transform.position = new Vector3(rightPos.x + 0.5f, -4.5f, 0);
-        bottomWall.transform.position = new Vector3(0, bottomPos.y + 0.4f, 0);
+        bottomWall.transform.position = new Vector3(0, bottomPos.y + 0.3f, 0);
     }
 }

@@ -7,34 +7,36 @@ using UnityEngine;
 
 
 
+
+
 public enum ItemType//아이템 목록
 {
-    BluePill
-    //RedPill
+    BluePill,RedPill
 }
 
-public ItemType Type;
-public float Duration;
+
 
 public class NewBehaviourScript : MonoBehaviour
 {
     private bool isInvincible = false;
     private float originalSpeed;
+    public float duration;
 
     public void UseItem(ItemType item)
     {
-        switch (item.Type)
+        switch (item)
         {
-            case Item.ItemType.BluePill:
-                StartCoroutine(ActivateInvicibility(item.duration));
+            case ItemType.BluePill:
+                StartCoroutine(ActivateInvincibility(duration));
                 break;
-            case Item.ItemType.RedPill:
-                StartCoroutine(SlowDownDroppingSpeed(item.duration));
+            case ItemType.RedPill:
+                StartCoroutine(SlowDownDroppingSpeed(duration));
                 break;
             default:
                 break;
         }
     }
+
 
     IEnumerator ActivateInvincibility(float duration)//무적활성관련
     {
@@ -53,6 +55,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (rb != null)
         {
             rb.velocity = new Vector3(0f, -1f, 0f); // 원하는 속도로 조절하기
+                                                    // 생성속도늦추기
         }
 
         yield return new WaitForSeconds(duration);
@@ -79,7 +82,7 @@ public class ItemSpawner : MonoBehaviour
     void SpawnItem()
     {
         // 랜덤하게 아이템을 생성합니다.
-        int randomItemType = Random.Range(0, 2); // 0 또는 1 중에서 랜덤하게 선택합니다.
+        int randomItemType = UnityEngine.Random.Range(0, 2); // 0 또는 1 중에서 랜덤하게 선택합니다.
 
         // 선택된 아이템의 종류에 따라 해당 아이템을 생성합니다.
         GameObject newItem;
@@ -93,14 +96,14 @@ public class ItemSpawner : MonoBehaviour
         }
 
         // 생성된 아이템을 플레이어와 상호작용하도록 설정한다.
-        newItem.GetComponent<ItemPickup>().SetPlayerReference(player);
+        //newItem.GetComponent<ItemPickup>().SetPlayerReference(player);
     }
 
     Vector3 GetRandomSpawnPosition()
     {
         // 랜덤한 위치를 변환
-        float x = Random.Range(-5f, 5f);
-        float y = Random.Range(1f, 5f);
+        float x = UnityEngine.Random.Range(-5f, 5f);
+        float y = UnityEngine.Random.Range(1f, 5f);
         float z = 0f;
 
         return new Vector3(x, y, z);

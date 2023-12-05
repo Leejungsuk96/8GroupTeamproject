@@ -57,7 +57,7 @@ public class PoopSpawn : MonoBehaviour
         if (randomValue < 0.3f)
         {
             GameObject poop = GameManager.I.pool.Get(2);
-            spawnPosition = new Vector3(-10f, -4.45f, 5f);
+            spawnPosition = new Vector3(-10f, -3.6f, 5f);
             poop.transform.position = spawnPosition;
         }
     }

@@ -34,7 +34,7 @@ public class Button : MonoBehaviour
     public void OnClickMenu()
     {
         SceneManager.LoadScene("MenuScene");
-
+        AudioManager.I.StartBgMusic();
     }
 
     public void OnClickBestScoreBoard()

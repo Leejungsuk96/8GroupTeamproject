@@ -1,16 +1,20 @@
+
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-pulbic enum ItemType//아이템 목록
+
+
+public enum ItemType//아이템 목록
 {
     BluePill
     //RedPill
 }
 
-public ItemType type;
-public float duration;
+public ItemType Type;
+public float Duration;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -19,7 +23,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void UseItem(ItemType item)
     {
-        switch (item.type)
+        switch (item.Type)
         {
             case Item.ItemType.BluePill:
                 StartCoroutine(ActivateInvicibility(item.duration));

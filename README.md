@@ -5,9 +5,9 @@
 Unity Ver: 2022.3.2f1<br/><br/>
 IDE : Vs Code <br/><br/>
 Asset 출처 <br/><br/>
-&nbsp;&nbsp;&nbsp;- 캐릭터:
-&nbsp;&nbsp;&nbsp;- 배경:
-&nbsp;&nbsp;&nbsp;- 오디오: 
+&nbsp;&nbsp;&nbsp;- 캐릭터: <br/><br/>
+&nbsp;&nbsp;&nbsp;- 배경: <br/><br/>
+&nbsp;&nbsp;&nbsp;- 오디오: <br/><br/>
 
 <br/><br/><br/><br/>
 

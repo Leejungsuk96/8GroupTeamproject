@@ -31,6 +31,7 @@ Asset 출처 <br/><br/>
 -진행상황 공유
 ![image](https://github.com/Leejungsuk96/8GroupTeamproject/assets/114940193/2e77465f-2609-413e-9938-56ae29be4567)
 <br/><br/>
+-Github 관리
 ![image](https://github.com/Leejungsuk96/8GroupTeamproject/assets/114940193/98ca946c-958a-4c8a-a62e-0814524b8b00)
 
 <br/><br/><br/><br/>

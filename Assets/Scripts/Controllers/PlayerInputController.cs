@@ -6,13 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputController : PoopCharacterController
 {
-    Pill pill;
 
     private float invincibilityDuration = 5f;
-    private void Awake()
-    {
-        pill = FindObjectOfType<Pill>();//pill 초기화
-    }
+    private bool isInvincible = false;
 
     public void OnMove(InputValue value)
     {
@@ -37,13 +33,27 @@ public class PlayerInputController : PoopCharacterController
         }
         else if (collision.gameObject.CompareTag("Pill"))
         {
-            pill.bluePill(true);
+            bluePill(true);
             Invoke("EndInvincibility", invincibilityDuration);
+            collision.gameObject.SetActive(false);
         }
     }
 
     private void EndInvincibility()
     {
-        pill.bluePill(false);
+        bluePill(false);
+    }
+
+    // 알약
+    public void bluePill(bool invincible)
+    {
+        if (invincible)
+        {
+            gameObject.layer = LayerMask.NameToLayer("Active");
+        }
+        else
+        {
+            gameObject.layer = LayerMask.NameToLayer("Deactive");
+        }
     }
 }

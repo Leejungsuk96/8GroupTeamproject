@@ -17,11 +17,25 @@ public class PlayerCollision : PlayerInvincibility
         }
         else if (collision.gameObject.CompareTag("Pill"))
         {            
-            bluePill(true);
-            AudioManager.I.GetPillSound();
-            GameManager.I.InvincibilityTimeDown();            
-            Invoke("EndInvincibility", invincibilityDuration);
-            collision.gameObject.SetActive(false);
+
+            if(gameObject.layer == LayerMask.NameToLayer("Deactive"))
+            {
+                bluePill(true);
+                AudioManager.I.GetPillSound();
+                GameManager.I.InvincibilityTimeDown();
+                Invoke("EndInvincibility", invincibilityDuration);
+                collision.gameObject.SetActive(false);
+            }
+            else if(gameObject.layer == LayerMask.NameToLayer("Active"))
+            {
+                CancelInvoke("EndInvincibility");
+                AudioManager.I.GetPillSound();
+                GameManager.I.InvincibilityTime = 5f; //만약 무적시간 바꾸면 이것도 같이 바꿔줘야댐.
+                GameManager.I.InvincibilityTimeDown();
+                Invoke("EndInvincibility", invincibilityDuration);
+                collision.gameObject.SetActive(false);
+            }
+            
         }
     }
 

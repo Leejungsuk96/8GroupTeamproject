@@ -29,11 +29,14 @@ public class Button : MonoBehaviour
     {
         AudioManager.I.StopBgMusic();
         SceneManager.LoadScene("MinkyuScene");
+        AudioManager.I.StartPlaySceneMusic();
         Time.timeScale = 1;
     }
     public void OnClickMenu()
     {
+        AudioManager.I.StopPlaySceneMusic();
         SceneManager.LoadScene("MenuScene");
+        AudioManager.I.StartBgMusic();
 
     }
 

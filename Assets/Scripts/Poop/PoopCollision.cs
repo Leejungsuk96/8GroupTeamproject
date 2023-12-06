@@ -30,7 +30,16 @@ public class PoopCollision : MonoBehaviour
             GameManager.I.Score++;
             Debug.Log("생성됐다!");
         }
-        
+        else if (collision.gameObject.CompareTag("Pill"))
+        {
+            collision.gameObject.SetActive(false);
+        }
+        /* //알약 태그 닿으면 그냥 사라지기
+         else if (collision.gameObject.CompareTag("Pill"))
+         {
+             collision.gameObject.SetActive(false);
+         }*/
+
         /*//플레이어에 추가해야댈 것
         else if (collision.gameObject.CompareTag("//똥들"))//예시
         {

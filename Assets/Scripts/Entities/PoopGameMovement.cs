@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PoopGameMovement : MonoBehaviour
 {
-    private PoopCharacterController _controller;
+    private CharacterController _controller;
     private Rigidbody2D _rigidbody;
     private Vector2 _movementDirection = Vector2.zero;
     public float moveSpeed;
@@ -16,7 +16,7 @@ public class PoopGameMovement : MonoBehaviour
 
     private void Awake()
     {
-        _controller = GetComponent<PoopCharacterController>();
+        _controller = GetComponent<CharacterController>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }

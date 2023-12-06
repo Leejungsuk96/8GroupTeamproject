@@ -7,9 +7,6 @@ public class PoopSpawn : MonoBehaviour
 
     // 게임이 시작되면 똥이 랜덤하게 나오게 만들어준다.
 
-    public GameObject PrefabNormalPoop;
-    public GameObject PrefabSpeedPoop;
-    public GameObject PrefabBottomPoop;
     Vector3 spawnPosition;
 
 
@@ -21,17 +18,18 @@ public class PoopSpawn : MonoBehaviour
 
         if (Time.time >= nextSpawnTime)
         {
-            
             nextSpawnTime = Time.time + 1f / spawnRate;
             SpawnPoop();
             SpawnSpeedPoop();
             SpawnBottomPoop();
+            SpawnBluePill();
         }
 
     }
 
     //여기에 Instantiate로 똥 생성 메서드 만들기
 
+    // 똥들 처음 스폰 위치
     void SpawnPoop()
     {
         GameObject poop = GameManager.I.pool.Get(0);
@@ -57,10 +55,20 @@ public class PoopSpawn : MonoBehaviour
         if (randomValue < 0.3f)
         {
             GameObject poop = GameManager.I.pool.Get(2);
-            spawnPosition = new Vector3(-10f, -4.45f, 5f);
+            spawnPosition = new Vector3(-10f, -3.6f, 5f);
             poop.transform.position = spawnPosition;
         }
     }
 
-
+    // 알약들 처음 스폰 위치
+    void SpawnBluePill()
+    {
+        float randomValue = Random.value;
+        if (randomValue < 0.1f)
+        {
+            GameObject poop = GameManager.I.pool.Get(3);
+            spawnPosition = new Vector3(Random.Range(-8f, 8f), 6f, 5f);
+            poop.transform.position = spawnPosition;
+        }
+    }
 }

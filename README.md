@@ -34,8 +34,19 @@ Asset 출처 <br/><br/>
 
 <br/><br/><br/><br/>
 
-## :blue_heart:주요기능
+## :blue_heart:주요기능<br/><br/>
+1. Poop과 플레이어와 충돌 감지해서 게임종료/ 벽과 충돌 감지해서 점수계산<br/><br/>
+2. 알약과 플레이어와 충돌 감지해서 무적 효과 발생<br/><br/>
+3. Prefebs Pool 방식으로 관리<br/><br/>
+4. 오디오 매니저 씬 이동해도 유지 / 씬마다 오디오 매니저에서 오디오 소스 가져오기
 
 <br/><br/><br/><br/>
 
 ## :purple_heart:문제 및 해결
+1. private로 설정 했을 때 NullRefence 오류시<br/><br/>
+- public으로 바꾸지 않고 GetComponent<>/ GetComponentChildren<>/GetComponentParent<>로 필요한 컴포넌트 가져오기<br/><br/>
+2. 플레이어가 점프해서 양쪽벽에 부딪혔을때 벽에 붙는현상<br/><br/>
+3. Instansiate 와 Destroy를 이용하여 게임오브젝트를 생성했는데 데이터 계속 쌓여서 메모리 효율이 저하 된다고 생각<br/><br/>
+- Instansiate 와 Destroy 대신에 Pool방식으로 변환하여 게임오브젝트를 재활용하여 메모리 효율을 올림<br/><br/>
+4. AudioManager 씬이동 시 파괴 /효율적인 오디오 소스 관리<br/><br/>
+- DontDestoryOnLoad를 사용하여 오디오 매니저가 없어지지 않게 하고 싱글톤화 시켜줘소 필요시 오디오 매니저에서 가져와서 사용함<br/><br/>

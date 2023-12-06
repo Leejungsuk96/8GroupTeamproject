@@ -1,4 +1,4 @@
-![image](https://github.com/Leejungsuk96/8GroupTeamproject/assets/114940193/383d9a1a-d6ed-4a7f-8e76-1dc5613fbfdb)# :heart:8조 똥피하기 게임
+# :heart:8조 똥피하기 게임
 <br/><br/>
 <br/><br/>
 ## :large_blue_circle:프로젝트 소개<br/><br/>

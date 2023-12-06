@@ -18,7 +18,8 @@ public class PlayerCollision : PlayerInvincibility
         }
         else if (collision.gameObject.CompareTag("Pill"))
         {            
-            bluePill(true);            
+            bluePill(true);
+            AudioManager.I.GetPillSound();
             GameManager.I.InvincibilityTimeDown();            
             Invoke("EndInvincibility", invincibilityDuration);
             collision.gameObject.SetActive(false);

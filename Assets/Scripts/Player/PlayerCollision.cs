@@ -17,8 +17,9 @@ public class PlayerCollision : PlayerInvincibility
             Debug.Log("´ê¾Ò´Ù!");
         }
         else if (collision.gameObject.CompareTag("Pill"))
-        {
-            bluePill(true);
+        {            
+            bluePill(true);            
+            GameManager.I.InvincibilityTimeDown();            
             Invoke("EndInvincibility", invincibilityDuration);
             collision.gameObject.SetActive(false);
         }

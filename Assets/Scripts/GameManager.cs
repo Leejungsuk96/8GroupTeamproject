@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject IsInvincibility;
     public Text InvincibilityTimeText;
     public float InvincibilityTime = 5f;
-
+    private bool PlayerIsInvincibility = false;
     private void Awake()
     {
         I = this;
@@ -40,6 +40,15 @@ public class GameManager : MonoBehaviour
         GameTime += Time.deltaTime;
         TimeUP();
         ScoreUP();
+        if (PlayerIsInvincibility)
+        {
+            InvincibilityTime -= Time.deltaTime;
+            InvincibilityTimeDown();
+            if(InvincibilityTime <= 0)
+            {
+                ResetInvincibility();
+            }
+        }
         
     }
 
@@ -56,20 +65,19 @@ public class GameManager : MonoBehaviour
         //胶乔靛 端 + 2       
     }
     public void InvincibilityTimeDown()
-    {
-        InvincibilityTime = 5f;
-        InvincibilityTime -= Time.deltaTime;
-        InvincibilityTimeText.text = "公利: " + InvincibilityTime.ToString("N2");
-    }
-
-    public void GetItem()
-    {
+    {       
+        PlayerIsInvincibility = true;
         IsInvincibility.SetActive(true);
-        if(InvincibilityTime <= 0)
-        {
+        InvincibilityTimeText.text = "公利: " + InvincibilityTime.ToString("N2");        
+    }        
+    public void ResetInvincibility()
+    {
+        if(InvincibilityTime <= 0) 
+        {                
+            PlayerIsInvincibility = false;
             IsInvincibility.SetActive(false);
-        }
-
+            InvincibilityTime = 5f;
+        }   
     }
 
     public void GameOver()

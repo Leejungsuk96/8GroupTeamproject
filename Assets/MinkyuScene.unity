@@ -1377,7 +1377,7 @@ GameObject:
   - component: {fileID: 961505843}
   - component: {fileID: 961505842}
   - component: {fileID: 961505849}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpPower: 20
+  jumpPower: 15
   anim: {fileID: 1698486998}
 --- !u!114 &961505845
 MonoBehaviour:

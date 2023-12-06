@@ -52,10 +52,10 @@ public class PoopSpawn : MonoBehaviour
     void SpawnBottomPoop()
     {
         float randomValue = Random.value;
-        if (randomValue < 0.3f)
+        if (randomValue < 0.2f)
         {
             GameObject poop = GameManager.I.pool.Get(2);
-            spawnPosition = new Vector3(-10f, -3.6f, 5f);
+            spawnPosition = new Vector3(-10f, -3.65f, 5f);
             poop.transform.position = spawnPosition;
         }
     }

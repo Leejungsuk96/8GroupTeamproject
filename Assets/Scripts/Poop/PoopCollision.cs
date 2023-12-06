@@ -21,14 +21,12 @@ public class PoopCollision : MonoBehaviour
             _poopController.count++;
             GameManager.I.Score++;
             //게임매니저의 점수값에 점수를 더해준다 ++;
-            Debug.Log("닿았다!");
         }
         else if (collision.gameObject.CompareTag("BottomPoop"))
         {
             collision.gameObject.SetActive(false);
             _poopController.count++;
             GameManager.I.Score++;
-            Debug.Log("생성됐다!");
         }
         else if (collision.gameObject.CompareTag("Pill"))
         {

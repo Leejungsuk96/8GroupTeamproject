@@ -63,16 +63,16 @@ public class PoopGameMovement : MonoBehaviour
 
     public void ApplyMovement(Vector2 direction)
     {
-        direction = direction * moveSpeed;
+        
 
         if(direction.x > 0)
         {
-            _rigidbody.velocity = new Vector2(10, _rigidbody.velocity.y);
+            _rigidbody.velocity = new Vector2(moveSpeed, _rigidbody.velocity.y);
             _spriteRenderer.flipX = false;
         }
         else if(direction.x < 0)
         {
-            _rigidbody.velocity = new Vector2(-10, _rigidbody.velocity.y);
+            _rigidbody.velocity = new Vector2((-1*moveSpeed), _rigidbody.velocity.y);
             _spriteRenderer.flipX = true;
         }
         else

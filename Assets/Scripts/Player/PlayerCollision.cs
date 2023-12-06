@@ -5,7 +5,12 @@ using UnityEngine;
 public class PlayerCollision : PlayerInvincibility
 {
     private float invincibilityDuration = 5f;
+    private SpriteRenderer spriteRenderer;
 
+    private void Awake()
+    {
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Poop") || collision.gameObject.CompareTag("BottomPoop"))
@@ -21,6 +26,7 @@ public class PlayerCollision : PlayerInvincibility
             if(gameObject.layer == LayerMask.NameToLayer("Deactive"))
             {
                 bluePill(true);
+                spriteRenderer.color = new Color(30f, 0f, 255f);
                 AudioManager.I.GetPillSound();
                 GameManager.I.InvincibilityTimeDown();
                 Invoke("EndInvincibility", invincibilityDuration);
@@ -42,5 +48,6 @@ public class PlayerCollision : PlayerInvincibility
     private void EndInvincibility()
     {
         bluePill(false);
+        spriteRenderer.color = Color.white;
     }
 }

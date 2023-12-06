@@ -28,7 +28,7 @@ Asset 출처 <br/><br/>
 팀원(프로그래머): 이정석- MenuScene 제작 + 최고점수, 게임 시간, EndPanel 제작<br/><br/>
 팀원(디자이너): 이원재- IntroScene 제작 + 오디오 관리 + 에셋디자인 및 관리
 <br/><br/>
-
+<진행상황 공유>
 ![image](https://github.com/Leejungsuk96/8GroupTeamproject/assets/114940193/2e77465f-2609-413e-9938-56ae29be4567)
 
 

@@ -1,7 +1,4 @@
-# :heart:8조 똥피하기 게임
-<br/><br/>
-<br/><br/>
-## :large_blue_circle:프로젝트 소개<br/><br/>
+## :heart: 8조 똥피하기 게임소개<br/><br/>
 고전게임 똥피하기를 기반으로 우리 팀만의 게임 개발
 <br/><br/>
 <br/><br/>
@@ -13,9 +10,9 @@
 Unity Ver: 2022.3.2f1<br/><br/>
 IDE : Vs Code <br/><br/>
 Asset 출처 <br/><br/>
-&nbsp;&nbsp;&nbsp;- 써니랜드(에셋스토어): https://assetstore.unity.com/packages/2d/characters/sunny-land-103349 <br/><br/>
-&nbsp;&nbsp;&nbsp;- 태백체폰트: https://www.taebaek.go.kr/www/contents.do?key=1857 <br/><br/>
-&nbsp;&nbsp;&nbsp;- 판타지 우든GUI: https://assetstore.unity.com/packages/2d/gui/fantasy-wooden-gui-free-103811 
+&nbsp;- 써니랜드(에셋스토어): https://assetstore.unity.com/packages/2d/characters/sunny-land-103349 <br/><br/>
+&nbsp;- 태백체폰트: https://www.taebaek.go.kr/www/contents.do?key=1857 <br/><br/>
+&nbsp;- 판타지 우든GUI: https://assetstore.unity.com/packages/2d/gui/fantasy-wooden-gui-free-103811 
 
 <br/><br/><br/><br/>
 

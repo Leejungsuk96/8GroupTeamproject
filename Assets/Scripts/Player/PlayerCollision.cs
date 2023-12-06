@@ -1,25 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PlayerInputController : PoopCharacterController
+public class PlayerCollision : PlayerInvincibility
 {
-
     private float invincibilityDuration = 5f;
-    private bool isInvincible = false;
-
-    public void OnMove(InputValue value)
-    {
-        Vector2 moveInput = value.Get<Vector2>().normalized;
-        CallMoveEvent(moveInput);
-    }
-
-    public void OnJump(InputValue value)
-    {
-        CallJumpEvent(value.isPressed);
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -42,18 +27,5 @@ public class PlayerInputController : PoopCharacterController
     private void EndInvincibility()
     {
         bluePill(false);
-    }
-
-    // ¾Ë¾à
-    public void bluePill(bool invincible)
-    {
-        if (invincible)
-        {
-            gameObject.layer = LayerMask.NameToLayer("Active");
-        }
-        else
-        {
-            gameObject.layer = LayerMask.NameToLayer("Deactive");
-        }
     }
 }

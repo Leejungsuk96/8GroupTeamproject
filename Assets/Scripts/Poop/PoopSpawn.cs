@@ -64,7 +64,7 @@ public class PoopSpawn : MonoBehaviour
     void SpawnBluePill()
     {
         float randomValue = Random.value;
-        if (randomValue < 0.9f)
+        if (randomValue < 0.1f)
         {
             GameObject poop = GameManager.I.pool.Get(3);
             spawnPosition = new Vector3(Random.Range(-8f, 8f), 6f, 5f);

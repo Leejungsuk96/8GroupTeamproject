@@ -10,7 +10,7 @@ public class PoopSpeed : MonoBehaviour
 
     void Update()
     {
-        if (CompareTag("Poop"))
+        if (CompareTag("Poop") || CompareTag("Pill"))
         {
             Move();
         }

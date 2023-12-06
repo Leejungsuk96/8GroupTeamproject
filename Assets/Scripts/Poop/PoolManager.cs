@@ -38,11 +38,11 @@ public class PoolManager : MonoBehaviour
                 if (i == 2)
                 {
                     // ¹Ù´Ú ¶Ë
-                    select.transform.position = new Vector3(-10f, -4.45f, 5f);
+                    select.transform.position = new Vector3(-10f, -3.6f, 5f);
                 }
                 else
                 {
-                    //À§¿¡ ¶Ë
+                    //À§¿¡ ¶Ë, ¾Ë¾àµé
                     select.transform.position = new Vector3(Random.Range(-8f, 8f), 6f, 5f);
                 }
                 select.SetActive(true);

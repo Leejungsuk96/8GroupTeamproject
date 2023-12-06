@@ -19,8 +19,10 @@ public class GameManager : MonoBehaviour
     public Text BestScoreText;    
     public GameObject BestMsg;
     public int BestScore = 0;
-
-
+    public GameObject IsInvincibility;
+    public Text InvincibilityTimeText;
+    public float InvincibilityTime = 5f;
+    private bool PlayerIsInvincibility = false;
     private void Awake()
     {
         I = this;
@@ -38,6 +40,15 @@ public class GameManager : MonoBehaviour
         GameTime += Time.deltaTime;
         TimeUP();
         ScoreUP();
+        if (PlayerIsInvincibility)
+        {
+            InvincibilityTime -= Time.deltaTime;
+            InvincibilityTimeDown();
+            if(InvincibilityTime <= 0)
+            {
+                ResetInvincibility();
+            }
+        }
         
     }
 
@@ -52,6 +63,21 @@ public class GameManager : MonoBehaviour
         EndScoreText.text = "점수: " + (int)Score;
         //일반 똥 + 1
         //스피드 똥 + 2       
+    }
+    public void InvincibilityTimeDown()
+    {       
+        PlayerIsInvincibility = true;
+        IsInvincibility.SetActive(true);
+        InvincibilityTimeText.text = "무적: " + InvincibilityTime.ToString("N2");        
+    }        
+    public void ResetInvincibility()
+    {
+        if(InvincibilityTime <= 0) 
+        {                
+            PlayerIsInvincibility = false;
+            IsInvincibility.SetActive(false);
+            InvincibilityTime = 5f;
+        }   
     }
 
     public void GameOver()

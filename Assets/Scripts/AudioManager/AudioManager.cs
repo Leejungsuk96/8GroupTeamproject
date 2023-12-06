@@ -8,6 +8,9 @@ public class AudioManager : MonoBehaviour
     public GameObject audioManager;
     public AudioSource BgMusic;
     public AudioSource PlaySceneMusic;
+    public AudioSource EffectSound;
+    public AudioClip PlayerGetPillSound;
+    public AudioClip PlayerJumpSound;
     public bool IsPlayingBgMusic = false;
     // Start is called before the first frame update
 
@@ -44,5 +47,14 @@ public class AudioManager : MonoBehaviour
     public void StopPlaySceneMusic()
     {
         PlaySceneMusic.Stop();
+    }
+
+    public void JumpSound()
+    {
+        EffectSound.PlayOneShot(PlayerJumpSound);
+    }
+    public void GetPillSound()
+    {
+        EffectSound.PlayOneShot(PlayerGetPillSound);
     }
 }

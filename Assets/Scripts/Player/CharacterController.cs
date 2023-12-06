@@ -17,5 +17,6 @@ public class CharacterController : MonoBehaviour
     public void CallJumpEvent(bool direction)
     {
         OnJumpEvent?.Invoke(direction);
+        AudioManager.I.JumpSound();
     }
 }
